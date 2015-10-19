@@ -11,3 +11,6 @@ C:\personal projects\GITHUB_REPO\voorbereiding_taak_2015\WpfApplication1\obj\Deb
 C:\personal projects\GITHUB_REPO\voorbereiding_taak_2015\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
 C:\personal projects\GITHUB_REPO\voorbereiding_taak_2015\WpfApplication1\obj\Debug\WpfApplication1.exe
 C:\personal projects\GITHUB_REPO\voorbereiding_taak_2015\WpfApplication1\obj\Debug\WpfApplication1.pdb
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\tryouts\bin\Debug\WpfApplication1.exe.config
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\tryouts\obj\Debug\WpfApplication1.exe
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\tryouts\obj\Debug\WpfApplication1.pdb
