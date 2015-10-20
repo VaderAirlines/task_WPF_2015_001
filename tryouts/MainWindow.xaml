@@ -3,48 +3,42 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525" Loaded="generateComponents">
 
-    <Grid>
-        <TreeView Name="_treeView">
-            <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Subordinates}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Path=Name}" />
-                        <TextBlock Text="{Binding Path=Age}" />
-                        <CheckBox IsChecked="{Binding Path=Checked}" ToolTip="{Binding Path=TooltipText}"></CheckBox>
-                    </StackPanel>
-                </HierarchicalDataTemplate>
-            </TreeView.ItemTemplate>
-        </TreeView>
+    <DockPanel>
 
+        <!--<Menu DockPanel.Dock="Top" Height="auto" ItemsSource="{Binding Subordinates}">-->
+        <Menu Name="mnuMenu" DockPanel.Dock="Top" Height="auto">
+            <Menu.Resources>
+                <Style TargetType="{x:Type MenuItem}">
+                    <!--<Setter Property="Command" Value="{Binding Command}" />-->
+                    <Setter Property="Header" Value="{Binding Path=Name}" />
+                    <!--<Setter Property="Icon">
+                        <Setter.Value>
+                            <Image Source="{Binding MenuIcon}" Height="16px" Width="16px" />
+                        </Setter.Value>
+                    </Setter>-->
+                    <Setter Property="ItemsSource" Value="{Binding Subordinates}" />
+                    <Setter Property="Tag" Value="{Binding windowToOpen}" />
 
+                    <EventSetter Event="Click" Handler="openNewWindow"/>
+                </Style>
+            </Menu.Resources>
+        </Menu>
+        
+        <Grid DockPanel.Dock="Left">
+            <TreeView Name="trvTreeview">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Subordinates}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=Name}" Foreground="{Binding Path=Color}"/>
+                            <TextBlock Text="{Binding Path=Age}" />
+                            <CheckBox IsChecked="{Binding Path=Checked}" ToolTip="{Binding Path=TooltipText}"></CheckBox>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </Grid>
+       
+    </DockPanel>
 
-        <!--<TreeView ItemsSource="{Binding League}">
-
-            --><!-- Conference template --><!--
-            <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Teams}">
-                    <TextBlock Foreground="Red" Text="{Binding Name}" />
-
-                    --><!-- Team template --><!--
-                    <HierarchicalDataTemplate.ItemTemplate>
-                        <HierarchicalDataTemplate ItemsSource="{Binding Players}">
-                            <TextBlock Text="{Binding Name}" />
-
-                            --><!-- Player template --><!--
-                            <HierarchicalDataTemplate.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding}" />
-                                </DataTemplate>
-                            </HierarchicalDataTemplate.ItemTemplate>
-
-                        </HierarchicalDataTemplate>
-                    </HierarchicalDataTemplate.ItemTemplate>
-
-                </HierarchicalDataTemplate>
-            </TreeView.ItemTemplate>
-
-        </TreeView>-->
-
-    </Grid>
 
 </Window>

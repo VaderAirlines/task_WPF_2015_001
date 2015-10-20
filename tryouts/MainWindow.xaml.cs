@@ -23,24 +23,43 @@ namespace WpfApplication1 {
         }
 
         private void generateComponents(object sender, RoutedEventArgs e) {
-            var bob = new Person { Name = "Bob", Age = 34, Checked = false };
-            var sally = new Person { Name = "Sally", Age = 28, Checked = true };
-            sally.Subordinates.Add(new Person { Name = "Joe", Age = 15, Checked = true });
+            var bob = new Person(Brushes.Black) { Name = "Bob", Age = 34, Checked = false, windowToOpen = "test.xaml" };
+            var sally = new Person(Brushes.Blue) { Name = "Sally", Age = 28, Checked = true, windowToOpen = "test.xaml" };
+            var joe = new Person(Brushes.Black) { Name = "Joe", Age = 44, Checked = false, windowToOpen="test.xaml" };
 
-            _treeView.Items.Add(bob);
-            _treeView.Items.Add(sally);
+            joe.Subordinates.Add(bob);
+            sally.Subordinates.Add(joe);
+
+            trvTreeview.Items.Add(bob);
+            trvTreeview.Items.Add(sally);
+
+            mnuMenu.Items.Add(bob);
+            mnuMenu.Items.Add(sally);
+        }
+
+        private void openNewWindow(object sender, RoutedEventArgs e)
+        {
+            e.Handled = true;
+            MenuItem item = (MenuItem)sender;
+
+            var window = (Window)Application.LoadComponent(new Uri(item.Tag.ToString(), UriKind.Relative));
+            window.Show();
         }
     }
 
     public class Person {
-        public Person() {
+        public Person(Brush color) {
             Subordinates = new List<Person>();
+            Color = color;
         }
 
         public string Name { get; set; }
         public int Age { get; set; }
         public bool Checked { get; set; }
         public string TooltipText { get { return "test"; } }
+        public Brush Color { get; set; }
+        public string windowToOpen { get; set; }
+
         public List<Person> Subordinates { get; private set; }
     }
 }
