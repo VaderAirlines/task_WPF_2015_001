@@ -19,6 +19,13 @@ namespace WpfApplication1
     /// </summary>
     public partial class test : Window
     {
+        private string _buttonText = string.Empty;
+
+        public string buttonText {
+            get { return _buttonText; }
+            set { btnClose.Content = value; }
+        }
+
         public test()
         {
             InitializeComponent();

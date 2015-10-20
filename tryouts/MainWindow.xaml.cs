@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace WpfApplication1 {
     /// <summary>
@@ -42,8 +43,16 @@ namespace WpfApplication1 {
             e.Handled = true;
             MenuItem item = (MenuItem)sender;
 
-            var window = (Window)Application.LoadComponent(new Uri(item.Tag.ToString(), UriKind.Relative));
-            window.Show();
+            Window windowToOpen = (Window)Application.LoadComponent(new Uri(item.Tag.ToString(), UriKind.Relative));
+            SetProperty(windowToOpen, "buttonText", item.Header);
+
+            windowToOpen.Show();
+        }
+
+        private void SetProperty(object target, string propertyName, object value)
+        {
+            PropertyInfo property = target.GetType().GetProperty(propertyName);
+            property.SetValue(target, value, null);
         }
     }
 
