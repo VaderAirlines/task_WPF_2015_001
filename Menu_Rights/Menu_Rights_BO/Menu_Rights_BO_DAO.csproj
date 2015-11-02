@@ -39,13 +39,14 @@
     <Compile Include="BO\appSettings.cs" />
     <Compile Include="BO\appUser.cs" />
     <Compile Include="BO\menuItem.cs" />
+    <Compile Include="DAO\dbItems.cs" />
+    <Compile Include="DAO\dbUserGroups.cs" />
+    <Compile Include="DAO\dbUsers.cs" />
     <Compile Include="DB connection\connectionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BO\userGroup.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

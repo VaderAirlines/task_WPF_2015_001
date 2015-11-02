@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu_Rights_BO_DAO 
+namespace Menu_Rights_BO_DAO
 {
     class appSettings 
     {
