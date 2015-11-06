@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu_Rights_BO_DAO
+namespace Menu_Rights_BO_DAO.BO
 {
-    class appSettings 
+    public class appSettings 
     {
         // BACKING FIELDS
         string _topTreeviewItemColor;

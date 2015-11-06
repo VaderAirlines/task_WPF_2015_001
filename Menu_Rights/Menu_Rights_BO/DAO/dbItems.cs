@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
+using Menu_Rights_BO_DAO.BO;
 
 namespace Menu_Rights_BO_DAO.DAO {
 
@@ -14,7 +15,8 @@ namespace Menu_Rights_BO_DAO.DAO {
             List<menuItem> items = null;
 
             using (SqlConnection con = connectionManager.getConnection()) {
-                SqlCommand com = new SqlCommand("getUser", con);
+                SqlCommand com = new SqlCommand("getItemsForGroup", con);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@groupID", groupID);
 
                 try {
@@ -27,7 +29,12 @@ namespace Menu_Rights_BO_DAO.DAO {
                         while (reader.Read()) {
                             menuItem item = new menuItem();
                             item.id = Convert.ToInt32(reader["id"]);
-                            item.
+                            item.pageName = reader["pageName"].ToString();
+                            item.orderNrInParent = Convert.ToInt32(reader["orderNrInParent"]);
+                            item.text = reader["itemText"].ToString();
+                            item.parentID = Convert.ToInt32(reader["parentID"]);
+
+                            items.Add(item);
                         };
                     };
                 } catch (Exception ex) {

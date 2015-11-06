@@ -3,16 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
+using Menu_Rights_BO_DAO.BO;
 
 namespace Menu_Rights_BO_DAO.DAO {
 
-    static class dbUsers {
+    public static class dbUsers {
 
         public static appUser getUser(string login, string password) {
             appUser user = null;
 
             using (SqlConnection con = connectionManager.getConnection()) {
                 SqlCommand com = new SqlCommand("getUser", con);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@login", login);
                 com.Parameters.AddWithValue("@password", password);
 

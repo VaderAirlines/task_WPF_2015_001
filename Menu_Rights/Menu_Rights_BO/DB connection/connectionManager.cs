@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
-using System.Configuration;
+using settings = Menu_Rights_Application_Settings;
 
 
 namespace Menu_Rights_BO_DAO.CONFIG 
@@ -24,9 +24,10 @@ namespace Menu_Rights_BO_DAO.CONFIG
         // PRIVATE METHODS
         private static string readConStringFromAppSettings() {
             try {
-                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                return config.AppSettings["connectionString"];
-            } catch {
+                string connectionString = settings.Properties.Settings.Default.connectionString;
+                return connectionString;
+
+            } catch (Exception ex) {
                 throw new couldNotReadConnectionStringFromAppSettingsException();
             }
         }

@@ -10,6 +10,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
+using Menu_Rights_BO_DAO.BO;
+using Menu_Rights_BO_DAO.DAO;
+using Menu_Rights_Application_Settings;
 
 namespace Menu_Rights
 {
@@ -22,7 +26,13 @@ namespace Menu_Rights
         {
             InitializeComponent();
         }
+
+        private void init(object sender,RoutedEventArgs e) {
+            appUser currentUser = dbUsers.getUser("login", "paswoord");
+            List<menuItem> items = currentUser.getMenuItems();
+            MessageBox.Show("got user");
+        }
     }
 
-    //test
+
 }

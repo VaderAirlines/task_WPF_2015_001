@@ -3,16 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
+using Menu_Rights_BO_DAO.BO;
 
 namespace Menu_Rights_BO_DAO.DAO {
 
-    class dbUserGroups {
+    public static class dbUserGroups {
 
         public static userGroup getUserGroup(int groupID) {
             userGroup userGroup = null;
 
             using (SqlConnection con = connectionManager.getConnection()) {
-                SqlCommand com = new SqlCommand("getUser", con);
+                SqlCommand com = new SqlCommand("getUserGroup", con);
+                com.CommandType = System.Data.CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@groupID", groupID);
 
                 try {

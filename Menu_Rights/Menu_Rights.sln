@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu_Rights", "Menu_Rights\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu_Rights_BO_DAO", "Menu_Rights_BO\Menu_Rights_BO_DAO.csproj", "{58C550F6-8552-4D04-A2C5-B9872C35798E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu_Rights_Application_Settings", "Menu_Rights_Application_Settings\Menu_Rights_Application_Settings.csproj", "{DDD295DF-0CFC-422E-903C-29D02697A91C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{58C550F6-8552-4D04-A2C5-B9872C35798E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58C550F6-8552-4D04-A2C5-B9872C35798E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58C550F6-8552-4D04-A2C5-B9872C35798E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDD295DF-0CFC-422E-903C-29D02697A91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD295DF-0CFC-422E-903C-29D02697A91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD295DF-0CFC-422E-903C-29D02697A91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD295DF-0CFC-422E-903C-29D02697A91C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
