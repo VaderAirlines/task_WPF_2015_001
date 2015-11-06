@@ -23,4 +23,6 @@ namespace Menu_Rights
             InitializeComponent();
         }
     }
+
+    //test
 }
