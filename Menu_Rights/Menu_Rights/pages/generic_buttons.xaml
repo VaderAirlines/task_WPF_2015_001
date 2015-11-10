@@ -9,6 +9,12 @@
       ShowsNavigationUI="False">
 
     <Grid>
-        <Button Name="btnClose" Width="100" Height="20" Click="closeWindow" Content="{Binding Path=currentUser.login}"></Button>
+        <StackPanel>
+            <Button Name="btnCreate" Width="100" Height="20" IsEnabled="{Binding Path=currentMenuItem.rights.canCreate}" Content="create"></Button>
+            <Button Name="btnRead" Width="100" Height="20" IsEnabled="{Binding Path=currentMenuItem.rights.canRead}" Content="read"></Button>
+            <Button Name="btnUpdate" Width="100" Height="20" IsEnabled="{Binding Path=currentMenuItem.rights.canUpdate}" Content="update"></Button>
+            <Button Name="btnDelete" Width="100" Height="20" IsEnabled="{Binding Path=currentMenuItem.rights.canDelete}" Content="delete"></Button>
+            <Button Name="btnClose" Width="100" Height="20" Click="closeWindow" Content="close"></Button>
+        </StackPanel>
     </Grid>
 </Page>

@@ -23,11 +23,14 @@ namespace Menu_Rights.pages {
             InitializeComponent();
         }
 
-
         // UI handlers
         private void closeWindow(object sender,RoutedEventArgs e) {
+            menuRightsApplication app = this.DataContext as menuRightsApplication;
+            app.currentMenuItem = null;
+
             Window mainWindow = Application.Current.MainWindow;
             Frame contentFrame = UIhelper.FindChild<Frame>(Application.Current.MainWindow, "fraContent");
+
             Page pageToOpen = (Page)Application.LoadComponent(new Uri("pages/treeview.xaml",UriKind.Relative));
             pageToOpen.DataContext = this.DataContext;
 

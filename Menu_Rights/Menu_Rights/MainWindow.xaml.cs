@@ -44,11 +44,16 @@ namespace Menu_Rights {
 
 
             // UI handlers
-            private void openNewWindow(object sender,RoutedEventArgs e) {
+            private void openPage(object sender,RoutedEventArgs e) {
                 e.Handled = true;
-                MenuItem item = (MenuItem)sender;
 
-                Page pageToOpen = (Page)Application.LoadComponent(new Uri("pages/" + item.Tag.ToString(),UriKind.Relative));
+                MenuItem item = (MenuItem)sender;
+                string[] tagSplit = item.Tag.ToString().Split('|');
+
+                string page = "pages/" + tagSplit[0];
+                app.currentMenuItem = app.currentUser.getMenuItem(Convert.ToInt32(tagSplit[1]));
+
+                Page pageToOpen = (Page)Application.LoadComponent(new Uri(page,UriKind.Relative));
                 pageToOpen.DataContext = app;
 
                 fraContent.Navigate(pageToOpen);

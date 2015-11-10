@@ -27,6 +27,7 @@ namespace Menu_Rights.pages {
 
         private void init(object sender,RoutedEventArgs e) {
             menuRightsApplication app = this.DataContext as menuRightsApplication;
+
             fillTreeview(app.currentUser.getMenuItems());
         }
 

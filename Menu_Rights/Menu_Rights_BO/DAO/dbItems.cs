@@ -34,6 +34,7 @@ namespace Menu_Rights_BO_DAO.DAO {
                             item.text = reader["itemText"].ToString();
                             item.color = "Black";
                             item.parentID = Convert.ToInt32(reader["parentID"]);
+                            item.rights = new menuItemRights(reader["rights"].ToString());
 
                             items.Add(item);
                         };

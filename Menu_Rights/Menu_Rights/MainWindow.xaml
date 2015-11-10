@@ -11,9 +11,9 @@
                     <Style TargetType="{x:Type MenuItem}">
                         <Setter Property="Header" Value="{Binding Path=text}" />
                         <Setter Property="ItemsSource" Value="{Binding subItems}" />
-                        <Setter Property="Tag" Value="{Binding pageName}" />
+                        <Setter Property="Tag" Value="{Binding tag}" />
 
-                        <EventSetter Event="Click" Handler="openNewWindow"/>
+                        <EventSetter Event="Click" Handler="openPage"/>
                     </Style>
                 </Menu.Resources>
             </Menu>

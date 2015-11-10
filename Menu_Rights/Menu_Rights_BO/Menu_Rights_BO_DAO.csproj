@@ -40,6 +40,7 @@
     <Compile Include="BO\appSettings.cs" />
     <Compile Include="BO\appUser.cs" />
     <Compile Include="BO\menuItem.cs" />
+    <Compile Include="BO\menuItemRights.cs" />
     <Compile Include="DAO\dbItems.cs" />
     <Compile Include="DAO\dbUserGroups.cs" />
     <Compile Include="DAO\dbUsers.cs" />
