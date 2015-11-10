@@ -16,3 +16,7 @@ C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\M
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.pdb
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\bin\Debug\Menu_Rights_Application_Settings.dll
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\bin\Debug\Menu_Rights_Application_Settings.pdb
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\treeview.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\treeview.g.cs
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\generic_buttons.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\generic_buttons.g.cs

@@ -14,24 +14,52 @@ using System.Configuration;
 using Menu_Rights_BO_DAO.BO;
 using Menu_Rights_BO_DAO.DAO;
 using Menu_Rights_Application_Settings;
+using System.Reflection;
 
-namespace Menu_Rights
-{
+namespace Menu_Rights {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+    public partial class MainWindow:Window {
 
-        private void init(object sender,RoutedEventArgs e) {
-            appUser currentUser = dbUsers.getUser("login", "paswoord");
-            List<menuItem> items = currentUser.getMenuItems();
-            MessageBox.Show("got user");
-        }
+            // application reference
+            public menuRightsApplication app { get; set; }
+
+
+            // initializers
+            public MainWindow() {
+                InitializeComponent();
+            }
+
+            private void init(object sender,RoutedEventArgs e) {
+                app = new menuRightsApplication();
+
+                fillMenu(app.currentUser.getMenuItems());
+                
+                Page startPage = (Page)Application.LoadComponent(new Uri("pages/treeview.xaml",UriKind.Relative));
+                startPage.DataContext = app;
+
+                fraContent.Navigate(startPage);
+            }
+
+
+            // UI handlers
+            private void openNewWindow(object sender,RoutedEventArgs e) {
+                e.Handled = true;
+                MenuItem item = (MenuItem)sender;
+
+                Page pageToOpen = (Page)Application.LoadComponent(new Uri("pages/" + item.Tag.ToString(),UriKind.Relative));
+                pageToOpen.DataContext = app;
+
+                fraContent.Navigate(pageToOpen);
+            }
+
+
+            // helpers
+            private void fillMenu(List<menuItem> items) {
+                items.ForEach(item => mnuMenu.Items.Add(item));
+            }
+
     }
 
 

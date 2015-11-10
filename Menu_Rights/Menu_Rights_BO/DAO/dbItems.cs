@@ -32,6 +32,7 @@ namespace Menu_Rights_BO_DAO.DAO {
                             item.pageName = reader["pageName"].ToString();
                             item.orderNrInParent = Convert.ToInt32(reader["orderNrInParent"]);
                             item.text = reader["itemText"].ToString();
+                            item.color = "Black";
                             item.parentID = Convert.ToInt32(reader["parentID"]);
 
                             items.Add(item);
