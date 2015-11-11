@@ -17,14 +17,11 @@ using Menu_Rights_Application_Settings;
 using System.Reflection;
 
 namespace Menu_Rights {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow:Window {
 
             // application reference
             public menuRightsApplication app { get; set; }
-
 
             // initializers
             public MainWindow() {
@@ -33,16 +30,21 @@ namespace Menu_Rights {
 
             private void init(object sender,RoutedEventArgs e) {
                 app = new menuRightsApplication();
+                app.validUserLoggedIn += app_validUserLoggedIn;
+                app.userLoggedOut += app_userLoggedOut;
 
-                fillMenu(app.currentUser.getMenuItems());
-                
-                Page startPage = (Page)Application.LoadComponent(new Uri("pages/treeview.xaml",UriKind.Relative));
-                startPage.DataContext = app;
-
-                fraContent.Navigate(startPage);
+                app.gotoPage("login");
             }
 
-
+            // app event handlers
+            void app_validUserLoggedIn(object sender,validUserLoggedInEventArgs e) {
+                fillMenu(app.currentUser.getMenuItems());
+            }
+        
+            void app_userLoggedOut(object sender,EventArgs e) {
+                mnuMenu.Items.Clear();
+            }
+        
             // UI handlers
             private void openPage(object sender,RoutedEventArgs e) {
                 e.Handled = true;
@@ -50,15 +52,20 @@ namespace Menu_Rights {
                 MenuItem item = (MenuItem)sender;
                 string[] tagSplit = item.Tag.ToString().Split('|');
 
-                string page = "pages/" + tagSplit[0];
-                app.currentMenuItem = app.currentUser.getMenuItem(Convert.ToInt32(tagSplit[1]));
+                string page = tagSplit[0];
+                int menuItemID = Convert.ToInt32(tagSplit[1]);
 
-                Page pageToOpen = (Page)Application.LoadComponent(new Uri(page,UriKind.Relative));
-                pageToOpen.DataContext = app;
+                switch(page) {
+                    case "logout":
+                        app.logOut();
+                        page = "login";
+                        break;
+                    default:
+                        break;
+                }
 
-                fraContent.Navigate(pageToOpen);
+                app.gotoPage(page, new object[] {menuItemID}); 
             }
-
 
             // helpers
             private void fillMenu(List<menuItem> items) {

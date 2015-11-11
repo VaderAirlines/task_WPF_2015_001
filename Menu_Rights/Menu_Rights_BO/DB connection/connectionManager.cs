@@ -27,7 +27,7 @@ namespace Menu_Rights_BO_DAO.CONFIG
                 string connectionString = settings.Properties.Settings.Default.connectionString;
                 return connectionString;
 
-            } catch (Exception ex) {
+            } catch {
                 throw new couldNotReadConnectionStringFromAppSettingsException();
             }
         }

@@ -13,19 +13,12 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Menu_Rights.pages {
-
-    public partial class generic_buttons:Page {
-
-        // initializers
-        public generic_buttons() {
+    /// <summary>
+    /// Interaction logic for welcome.xaml
+    /// </summary>
+    public partial class welcome:Page {
+        public welcome() {
             InitializeComponent();
         }
-
-        // UI handlers
-        private void closeWindow(object sender,RoutedEventArgs e) {
-            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            mainWindow.app.gotoPage("empty");
-        }
-
     }
 }

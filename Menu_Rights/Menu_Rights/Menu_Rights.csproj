@@ -61,7 +61,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="pages\addGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\addUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\empty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\generic_buttons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -69,13 +85,32 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pages\welcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pages\addGroup.xaml.cs">
+      <DependentUpon>addGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\addUser.xaml.cs">
+      <DependentUpon>addUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\empty.xaml.cs">
+      <DependentUpon>empty.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\generic_buttons.xaml.cs">
       <DependentUpon>generic_buttons.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\login.xaml.cs">
+      <DependentUpon>login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\treeview.xaml.cs">
       <DependentUpon>treeview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\welcome.xaml.cs">
+      <DependentUpon>welcome.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
