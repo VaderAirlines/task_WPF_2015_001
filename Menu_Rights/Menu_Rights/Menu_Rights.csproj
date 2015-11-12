@@ -69,6 +69,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pages\createMenuItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\empty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -96,6 +100,9 @@
     </Compile>
     <Compile Include="pages\addUser.xaml.cs">
       <DependentUpon>addUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\createMenuItem.xaml.cs">
+      <DependentUpon>createMenuItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\empty.xaml.cs">
       <DependentUpon>empty.xaml</DependentUpon>

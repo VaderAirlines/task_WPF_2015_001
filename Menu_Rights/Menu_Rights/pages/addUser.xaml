@@ -9,6 +9,58 @@
       ShowsNavigationUI="False">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!--LABELS-->
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="top">
+            <TextBlock>Username</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="top">
+            <TextBlock>Password</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="top">
+            <TextBlock>Usergroup</TextBlock>
+        </StackPanel>
+
+        <!--INPUTS-->
+        <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
+            <TextBox Name="txtLogin" Width="200" Text="{Binding Path=testProperty}"></TextBox>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
+            <TextBox Name="txtPassword" Width="200"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left">
+            <ComboBox x:Name="cmbGroups" Grid.Column="2" BorderThickness="1" ItemsSource="{Binding}" Width="200">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=joske}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        
+        <!--SUBMIT BUTTON-->
+        <StackPanel Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left">
+            <Button Name="btnCreateUser" Click="createUser" Width="200">Create user</Button>
+        </StackPanel>
         
     </Grid>
 </Page>
