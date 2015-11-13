@@ -13,12 +13,21 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Menu_Rights.pages {
-    /// <summary>
-    /// Interaction logic for addGroup.xaml
-    /// </summary>
+
     public partial class addGroup:Page {
+
+        // initializers
         public addGroup() {
             InitializeComponent();
         }
+
+        // UI handlers
+        private void createGroup(object sender, RoutedEventArgs e) {
+
+        }
+    }
+
+    public class ctxUserGroup { 
+        // TODO: implement datacontext sheit
     }
 }
