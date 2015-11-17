@@ -30,5 +30,11 @@ C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\M
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addUser.baml
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addGroup.g.cs
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addUser.g.cs
+<<<<<<< HEAD
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addMenuItem.baml
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addMenuItem.g.cs
+=======
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\createMenuItem.g.cs
+C:\personal projects\GITHUB_REPO\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.exe
+C:\personal projects\GITHUB_REPO\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.pdb
+>>>>>>> origin/master

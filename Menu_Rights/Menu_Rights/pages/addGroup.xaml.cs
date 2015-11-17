@@ -22,6 +22,7 @@ namespace Menu_Rights.pages {
         public addGroup() {
             InitializeComponent();
         }
+<<<<<<< HEAD
         
         private void init(object sender,RoutedEventArgs e) {
             cmbGroups.DataContext = dbUserGroups.getUserGroups();
@@ -61,6 +62,17 @@ namespace Menu_Rights.pages {
             txtGroupname.Focus();
         }
 
+=======
+
+        // UI handlers
+        private void createGroup(object sender, RoutedEventArgs e) {
+
+        }
+    }
+
+    public class ctxUserGroup { 
+        // TODO: implement datacontext sheit
+>>>>>>> origin/master
     }
 
 }

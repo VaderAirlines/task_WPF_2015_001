@@ -4,17 +4,26 @@
 winexe
 C#
 .cs
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\
+C:\personal projects\GITHUB_REPO\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\
 Menu_Rights
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\App.xaml
 91859732771
 
 15-587680902
 10-480708039
 MainWindow.xaml;pages\addGroup.xaml;pages\addUser.xaml;pages\addMenuItem.xaml;pages\empty.xaml;pages\generic_buttons.xaml;pages\login.xaml;pages\treeview.xaml;pages\welcome.xaml;
+=======
+C:\personal projects\GITHUB_REPO\task_WPF_2015_001\Menu_Rights\Menu_Rights\App.xaml
+92057683824
+
+15-1796760447
+10-181278645
+MainWindow.xaml;pages\addGroup.xaml;pages\addUser.xaml;pages\createMenuItem.xaml;pages\empty.xaml;pages\generic_buttons.xaml;pages\login.xaml;pages\treeview.xaml;pages\welcome.xaml;
+>>>>>>> origin/master
 
 False
 
