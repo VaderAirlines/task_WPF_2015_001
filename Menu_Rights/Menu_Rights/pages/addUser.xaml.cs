@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Menu_Rights_BO_DAO.BO;
+using Menu_Rights_BO_DAO.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,43 +20,58 @@ namespace Menu_Rights.pages {
     /// </summary>
     public partial class addUser:Page {
 
-        public List<lowieke> testList = null;
-        public testObject testObject = new testObject() { testProperty="joske" };
+        // fields
+        internal userHelper user = new userHelper();
 
+        // initializers
         public addUser() {
             InitializeComponent();
-
-            testList = new List<lowieke>() { new lowieke() { joske="eerste dinges", agnes = false},
-                                             new lowieke() { joske="eerste dinges", agnes = false},
-                                             new lowieke() { joske="eerste dinges", agnes = false},
-                                             new lowieke() { joske="eerste dinges", agnes = false},
-                                             new lowieke() { joske="eerste dinges", agnes = false},
-                                             new lowieke() { joske="eerste dinges", agnes = false},
-                                             new lowieke() { joske="eerste dinges", agnes = false},
-                                             new lowieke() { joske="tweede dinges", agnes=true} 
-                                            };
-
-            cmbGroups.DataContext = testList; 
-            txtLogin.DataContext = testObject;
+        }
+        
+        private void init(object sender,RoutedEventArgs e) {
+            cmbGroups.DataContext = dbUserGroups.getUserGroups();
+            txtLogin.DataContext = user;
+            txtPassword.DataContext = user;
         }
 
+
+        // UI handlers
         private void createUser(object sender,RoutedEventArgs e) {
-            if (cmbGroups.SelectedIndex != -1) {
-                lowieke item = (lowieke)cmbGroups.SelectedItem;
-                MessageBox.Show(item.joske);
-                MessageBox.Show(testObject.testProperty);
-            } else {
-                MessageBox.Show("Please choose a group.");
+            // input verification
+            if(cmbGroups.SelectedIndex < 0) {
+                MessageBox.Show("Please select a group for the new user.");
+                return;
             }
+
+            if ((user.username == null || user.password == null) || (user.username.Length < 6 || user.password.Length < 6)) {
+                MessageBox.Show("Please provide a username and password, both min. 6 characters long.");
+                return;
+            }
+
+            // input verified
+            userGroup selectedGroup = (userGroup)cmbGroups.SelectedItem;
+            user.groupID = selectedGroup.id;
+
+            if(!dbUsers.logInAlreadyExists(user.username)) {
+                try {
+                    dbUsers.createUser(user.username,user.password,user.groupID);
+                } catch {
+                    MessageBox.Show("Failed to create user. Please try again.");
+                };
+
+            } else {
+                MessageBox.Show("Username already taken. Please choose another one.");
+            };
+
         }
+
     }
 
-    public class lowieke {
-        public string joske { get; set; }
-        public bool agnes { get; set; }
-    }
-
-    public class testObject {
-        public string testProperty { get; set; }
+    //-----------------------------------------------------------------------------------------
+    // binding classes (helpers)
+    internal class userHelper {
+        public string username { get; set; }
+        public string password { get; set; }
+        public int groupID { get; set; }
     }
 }

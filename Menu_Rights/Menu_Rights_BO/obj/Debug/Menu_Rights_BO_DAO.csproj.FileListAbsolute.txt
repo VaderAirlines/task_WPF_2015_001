@@ -5,3 +5,5 @@ C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\M
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights_BO\obj\Debug\Menu_Rights_BO_DAO.csprojResolveAssemblyReference.cache
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights_BO\obj\Debug\Menu_Rights_BO.dll
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights_BO\obj\Debug\Menu_Rights_BO.pdb
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights_BO\bin\Debug\Menu_Rights_BO.dll.CodeAnalysisLog.xml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights_BO\bin\Debug\Menu_Rights_BO.dll.lastcodeanalysissucceeded

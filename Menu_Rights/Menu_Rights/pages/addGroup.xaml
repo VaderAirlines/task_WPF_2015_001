@@ -5,10 +5,57 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="addGroup"
-      ShowsNavigationUI="False">
+	  Title="addGroup"
+      ShowsNavigationUI="False" Loaded="init">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--LABELS-->
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="top">
+            <TextBlock>Groupname</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="top">
+            <TextBlock>Copy from group</TextBlock>
+        </StackPanel>
+
+        <!--INPUTS-->
+        <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
+            <TextBox Name="txtGroupname" Width="200"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
+            <ComboBox x:Name="cmbGroups" Grid.Column="2" BorderThickness="1" ItemsSource="{Binding}" Width="200">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
         
+        <StackPanel Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left">
+            <TextBlock>Please leave empty if you don't want to copy from another group.</TextBlock>
+        </StackPanel>
+
+        <!--SUBMIT BUTTON-->
+        <StackPanel Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left">
+            <Button Name="btnCreateGroup" Click="createGroup" Width="200">Create group</Button>
+        </StackPanel>
     </Grid>
 </Page>

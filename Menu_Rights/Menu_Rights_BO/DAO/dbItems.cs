@@ -39,9 +39,7 @@ namespace Menu_Rights_BO_DAO.DAO {
                             items.Add(item);
                         };
                     };
-                } catch (Exception ex) {
-                    throw ex;
-                };
+                } catch { throw; };
             }
 
             return items;

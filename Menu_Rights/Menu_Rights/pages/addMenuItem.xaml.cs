@@ -13,11 +13,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Menu_Rights.pages {
-    /// <summary>
-    /// Interaction logic for createMenuItem.xaml
-    /// </summary>
-    public partial class createMenuItem:Page {
-        public createMenuItem() {
+
+    public partial class addMenuItem:Page {
+
+        // initializers
+        public addMenuItem() {
             InitializeComponent();
         }
     }
