@@ -58,9 +58,14 @@ namespace Menu_Rights.pages {
 
                 try {
                     dbItems.createMenuItem(menuItem.text, menuItem.parentID, menuItem.orderNrInParent, menuItem.pageName);
+
                     MessageBox.Show("Item created successfully.");
+
                     clearItem();
                     refreshMenu();
+
+                    txtText.Focus();
+
                 } catch {
                     MessageBox.Show("Failed to create menu-item. Please try again.");
                 };

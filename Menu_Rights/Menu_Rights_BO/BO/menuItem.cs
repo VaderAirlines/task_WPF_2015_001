@@ -30,5 +30,8 @@ namespace Menu_Rights_BO_DAO.BO {
 
         public menuItemRights rights { get { return _rights; } set { _rights = value; } }
         public List<menuItem> subItems { get { return _subItems; } set { _subItems = value; } }
+
+        // EXTRA PROPERTIES FOR COMBOBOXES ETC.
+        public string textAndID { get { return _text + " (" + _id + ")"; } }
     }
 }

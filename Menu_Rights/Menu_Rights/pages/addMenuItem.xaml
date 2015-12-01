@@ -51,7 +51,7 @@
             <ComboBox x:Name="cmbParents" Grid.Column="2" BorderThickness="1" ItemsSource="{Binding}" Width="200">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Path=text}"/>
+                        <TextBlock Text="{Binding Path=textAndID}"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
