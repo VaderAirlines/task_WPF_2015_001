@@ -68,7 +68,8 @@ namespace Menu_Rights {
             }
 
             // helpers
-            private void fillMenu(List<menuItem> items) {
+            public void fillMenu(List<menuItem> items) {
+                mnuMenu.Items.Clear();
                 items.ForEach(item => mnuMenu.Items.Add(item));
             }
 

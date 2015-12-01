@@ -9,6 +9,66 @@
       ShowsNavigationUI="False">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--LABELS-->
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="top">
+            <TextBlock>Text to show</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="top">
+            <TextBlock>Parent</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="top">
+            <TextBlock>Order in parent</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="top">
+            <TextBlock>Page to link to</TextBlock>
+        </StackPanel>
         
+        <!--INPUTS-->
+        <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
+            <TextBox Name="txtText" Width="200" Text="{Binding Path=text}"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
+            <ComboBox x:Name="cmbParents" Grid.Column="2" BorderThickness="1" ItemsSource="{Binding}" Width="200">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=text}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Loaded="init">
+            <TextBox Name="txtOrderInParent" Width="200" Text="{Binding Path=orderNrInParent}"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left">
+            <TextBox Name="txtPageName" Width="200" Text="{Binding Path=pageName}"></TextBox>
+        </StackPanel>
+
+        <!--SUBMIT BUTTON-->
+        <StackPanel Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left">
+            <Button Name="btnCreateMenuItem" Click="createMenuItem" Width="200">Create menu item</Button>
+        </StackPanel>
+
     </Grid>
 </Page>

@@ -103,7 +103,6 @@ namespace Menu_Rights_BO_DAO.DAO {
 
                 } catch { throw; };
             }
-
         }
     }
 }

@@ -11,7 +11,7 @@ using System.Windows.Controls;
 namespace Menu_Rights {
 
     public class menuRightsApplication {
-        
+
         // events
         public event EventHandler<validUserLoggedInEventArgs> validUserLoggedIn;
         public event EventHandler userLoggedOut;
@@ -24,12 +24,12 @@ namespace Menu_Rights {
         public appUser currentUser { get; set; }
 
         // methods
-        public bool setUser(string login, string password) {
+        public bool setUser(string login,string password) {
             this.currentUser = dbUsers.getUser(login,password);
 
-            if (this.currentUser != null) {
+            if(this.currentUser != null) {
                 validUserLoggedInEventArgs args = new validUserLoggedInEventArgs(login);
-                validUserLoggedIn(this, args);
+                validUserLoggedIn(this,args);
                 return true;
             }
 
@@ -38,38 +38,48 @@ namespace Menu_Rights {
 
         public void logOut() {
             this.currentUser = null;
-            userLoggedOut(this, new EventArgs());
+            userLoggedOut(this,new EventArgs());
         }
 
-        public void gotoPage(string pageName, object[] args = null) {
+        public void gotoPage(string pageName,object[] args = null) {
+
             // get necessary object references
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
-            Page pageToOpen = (Page)Application.LoadComponent(new Uri("pages/" + pageName + ".xaml",UriKind.Relative));
+            Page pageToOpen = null;
 
-            // set data context
-            object datacontext = null;
-            switch(pageName) {
-                case "login":
-                case "treeview":
-                    datacontext = this;
-                    break;
-                case "generic_buttons":
-                    datacontext = this.currentUser.getMenuItem(Convert.ToInt32(args[0]));
-                    break;
-                default:
-                    break;
-            }
-            
-            pageToOpen.DataContext = datacontext;
+            try {
+                pageToOpen = (Page)Application.LoadComponent(new Uri("pages/" + pageName + ".xaml",UriKind.Relative));
 
-            // navigate to given page
-            mainWindow.fraContent.Navigate(pageToOpen);
+
+                // set data context
+                object datacontext = null;
+                switch(pageName) {
+                    case "login":
+                    case "addMenuItem":
+                    case "treeview":
+                        datacontext = this;
+                        break;
+                    case "generic_buttons":
+                        datacontext = this.currentUser.getMenuItem(Convert.ToInt32(args[0]));
+                        break;
+                    default:
+                        break;
+                }
+
+                pageToOpen.DataContext = datacontext;
+
+                // navigate to given page
+                mainWindow.fraContent.Navigate(pageToOpen);
+
+            } catch {
+                gotoPage("error",args);
+            };
         }
 
     }
 
     // custom event args
-    public class validUserLoggedInEventArgs : EventArgs {
+    public class validUserLoggedInEventArgs:EventArgs {
         public validUserLoggedInEventArgs(string login) { this.login = login; }
         public string login { get; set; }
     }

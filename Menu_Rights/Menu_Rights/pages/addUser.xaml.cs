@@ -27,7 +27,7 @@ namespace Menu_Rights.pages {
         public addUser() {
             InitializeComponent();
         }
-        
+
         private void init(object sender,RoutedEventArgs e) {
             cmbGroups.DataContext = dbUserGroups.getUserGroups();
             txtLogin.DataContext = user;
@@ -43,7 +43,7 @@ namespace Menu_Rights.pages {
                 return;
             }
 
-            if ((user.username == null || user.password == null) || (user.username.Length < 6 || user.password.Length < 6)) {
+            if((user.username == null || user.password == null) || (user.username.Length < 6 || user.password.Length < 6)) {
                 MessageBox.Show("Please provide a username and password, both min. 6 characters long.");
                 return;
             }
@@ -55,6 +55,8 @@ namespace Menu_Rights.pages {
             if(!dbUsers.logInAlreadyExists(user.username)) {
                 try {
                     dbUsers.createUser(user.username,user.password,user.groupID);
+                    MessageBox.Show("User created successfully.");
+                    clearUser();
                 } catch {
                     MessageBox.Show("Failed to create user. Please try again.");
                 };
@@ -63,6 +65,14 @@ namespace Menu_Rights.pages {
                 MessageBox.Show("Username already taken. Please choose another one.");
             };
 
+        }
+
+
+        // helpers
+        private void clearUser() {
+            txtLogin.Text = "";
+            txtPassword.Text = "";
+            cmbGroups.SelectedIndex = -1;
         }
 
     }

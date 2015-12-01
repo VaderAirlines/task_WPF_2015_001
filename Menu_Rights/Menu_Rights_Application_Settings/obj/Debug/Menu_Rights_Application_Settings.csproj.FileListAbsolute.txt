@@ -3,5 +3,3 @@ C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\M
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights_Application_Settings\bin\Debug\Menu_Rights_Application_Settings.pdb
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights_Application_Settings\obj\Debug\Menu_Rights_Application_Settings.dll
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights_Application_Settings\obj\Debug\Menu_Rights_Application_Settings.pdb
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights_Application_Settings\bin\Debug\Menu_Rights_Application_Settings.dll.CodeAnalysisLog.xml
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights_Application_Settings\bin\Debug\Menu_Rights_Application_Settings.dll.lastcodeanalysissucceeded

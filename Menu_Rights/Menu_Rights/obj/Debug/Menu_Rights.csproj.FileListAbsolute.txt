@@ -38,3 +38,5 @@ C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\M
 C:\personal projects\GITHUB_REPO\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.exe
 C:\personal projects\GITHUB_REPO\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.pdb
 >>>>>>> origin/master
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\error.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\error.g.cs

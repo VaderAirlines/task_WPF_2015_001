@@ -73,6 +73,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pages\error.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="pages\empty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +107,9 @@
     </Compile>
     <Compile Include="pages\addMenuItem.xaml.cs">
       <DependentUpon>addMenuItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\error.xaml.cs">
+      <DependentUpon>error.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\empty.xaml.cs">
       <DependentUpon>empty.xaml</DependentUpon>
