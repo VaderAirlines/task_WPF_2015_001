@@ -1,4 +1,6 @@
 C:\personal projects\GITHUB_REPO\task_WPF_2015_001\Menu_Rights\Menu_Rights\bin\Debug\Menu_Rights.exe.config
+C:\personal projects\GITHUB_REPO\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.exe
+C:\personal projects\GITHUB_REPO\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.pdb
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\bin\Debug\Menu_Rights.exe.config
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\bin\Debug\Menu_Rights.exe
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\bin\Debug\Menu_Rights.pdb
@@ -8,13 +10,25 @@ C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\M
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\bin\Debug\Menu_Rights_BO.pdb
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.csprojResolveAssemblyReference.cache
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\MainWindow.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addGroup.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addUser.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addMenuItem.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\error.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\empty.baml
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\generic_buttons.baml
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\login.baml
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\treeview.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\welcome.baml
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\MainWindow.g.cs
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addGroup.g.cs
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addUser.g.cs
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addMenuItem.g.cs
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\error.g.cs
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\empty.g.cs
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\generic_buttons.g.cs
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\login.g.cs
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\treeview.g.cs
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\welcome.g.cs
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\App.g.cs
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights_MarkupCompile.cache
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.g.resources
@@ -22,21 +36,3 @@ C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\M
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.csproj.GenerateResource.Cache
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.exe
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.pdb
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\welcome.baml
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\welcome.g.cs
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\empty.baml
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\empty.g.cs
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addGroup.baml
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addUser.baml
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addGroup.g.cs
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addUser.g.cs
-<<<<<<< HEAD
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addMenuItem.baml
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\addMenuItem.g.cs
-=======
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\createMenuItem.g.cs
-C:\personal projects\GITHUB_REPO\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.exe
-C:\personal projects\GITHUB_REPO\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.pdb
->>>>>>> origin/master
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\error.baml
-C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\pages\error.g.cs

@@ -55,6 +55,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="classes\hierarchicalHelper.cs" />
     <Compile Include="classes\menuRightsApplication.cs" />
     <Compile Include="classes\UIhelper.cs" />
     <Compile Include="MainWindow.xaml.cs">

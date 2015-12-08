@@ -16,15 +16,95 @@
                         <HierarchicalDataTemplate ItemsSource="{Binding subItems}">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding Path=text}" Foreground="{Binding Path=color}" />
-                                <!--<TextBlock Text="{Binding Path=Age}" />-->
-                                <!--<CheckBox IsChecked="{Binding Path=Checked}" ToolTip="{Binding Path=TooltipText}"></CheckBox>-->
+                                <TextBlock Text="   "></TextBlock>
+                                <CheckBox IsChecked="{Binding Path=rights.isVisible}" ToolTip="{Binding Path=visibleTooltipText}" Tag="{Binding Path=id}" 
+                                          Checked="visibilityChangedHandler" 
+                                          Unchecked="visibilityChangedHandler"></CheckBox>
+                                <TextBlock Text="::"></TextBlock>
+                                <CheckBox IsChecked="{Binding Path=rights.canCreate}" ToolTip="{Binding Path=createTooltipText}"></CheckBox>
+                                <CheckBox IsChecked="{Binding Path=rights.canRead}" ToolTip="{Binding Path=readTooltipText}"></CheckBox>
+                                <CheckBox IsChecked="{Binding Path=rights.canUpdate}" ToolTip="{Binding Path=updateTooltipText}"></CheckBox>
+                                <CheckBox IsChecked="{Binding Path=rights.canDelete}" ToolTip="{Binding Path=deleteTooltipText}"></CheckBox>
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>
                 </TreeView>
             </StackPanel>
             
-            <StackPanel></StackPanel>
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <!--LABELS-->
+                    <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="top">
+                        <TextBlock>Select usergroup</TextBlock>
+                    </StackPanel>
+
+                    <!--<StackPanel Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="top">
+                        <TextBlock>Parent</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="top">
+                        <TextBlock>Order in parent</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="top">
+                        <TextBlock>Page to link to</TextBlock>
+                    </StackPanel>-->
+
+                    <!--INPUTS-->
+                    <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
+                        <ComboBox x:Name="cmbGroups" 
+                                  Grid.Column="2" BorderThickness="1" ItemsSource="{Binding}" Width="200"
+                                  SelectionChanged="groupSelectionChangedHandler">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=name}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <!--<StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
+                        <ComboBox x:Name="cmbParents" Grid.Column="2" BorderThickness="1" ItemsSource="{Binding}" Width="200">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=textAndID}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Loaded="init">
+                        <TextBox Name="txtOrderInParent" Width="200" Text="{Binding Path=orderNrInParent}"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left">
+                        <TextBox Name="txtPageName" Width="200" Text="{Binding Path=pageName}"></TextBox>
+                    </StackPanel>
+
+                    <! SUBMIT BUTTON  >
+                    <StackPanel Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left">
+                        <Button Name="btnCreateMenuItem" Click="createMenuItem" Width="200">Create menu item</Button>
+                    </StackPanel>-->
+
+                </Grid>
+                
+            </StackPanel>
             
         </DockPanel>
     </Grid>

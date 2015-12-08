@@ -19,6 +19,9 @@ namespace Menu_Rights.pages {
     /// Interaction logic for treeview.xaml
     /// </summary>
     public partial class treeview:Page {
+        
+        // fields
+        List<menuItem> currentTreeviewItems = null;
 
         // initializers
         public treeview() {
@@ -28,14 +31,43 @@ namespace Menu_Rights.pages {
         private void init(object sender,RoutedEventArgs e) {
             menuRightsApplication app = this.DataContext as menuRightsApplication;
 
-            fillTreeview(app.currentUser.getMenuItems());
+            cmbGroups.DataContext = dbUserGroups.getUserGroups();
+            cmbGroups.SelectedItem = app.currentUser.group;
+
+            fillTreeview((userGroup)cmbGroups.SelectedItem);
         }
 
 
+        // UI handlers
+        private void groupSelectionChangedHandler(object sender,SelectionChangedEventArgs e) {
+            fillTreeview((userGroup)cmbGroups.SelectedItem);
+        }
+
+        private void visibilityChangedHandler(object sender,RoutedEventArgs e) {
+            CheckBox checkbox = (CheckBox)sender;
+            menuItem checkedItem = getMenuItemWithID(currentTreeviewItems, (int)checkbox.Tag);
+            MessageBox.Show(checkedItem.id.ToString());
+        }
+
         // helpers
-        private void fillTreeview(List<menuItem> items) {
+        private void fillTreeview(userGroup group) {
+            currentTreeviewItems = dbItems.getItemsForGroup(group.id);
+            currentTreeviewItems = hierarchicalHelper.convertToHierarchicalMenuItemList(currentTreeviewItems);
+
             trvTreeview.Items.Clear();
-            items.ForEach(item => trvTreeview.Items.Add(item));
+            currentTreeviewItems.ForEach(item => trvTreeview.Items.Add(item));
+        }
+        
+        private menuItem getMenuItemWithID(List<menuItem> items,int idToFind) {
+            foreach(menuItem item in items) {
+                if (item.id == idToFind) { return item; }
+                else { 
+                    menuItem subitem = getMenuItemWithID(item.subItems, idToFind);
+                    if (subitem != null) { return subitem; };
+                };
+            }
+
+            return null;
         }
 
     }
