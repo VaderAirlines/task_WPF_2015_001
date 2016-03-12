@@ -15,16 +15,31 @@
                     <TreeView.ItemTemplate>
                         <HierarchicalDataTemplate ItemsSource="{Binding subItems}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Path=text}" Foreground="{Binding Path=color}" />
-                                <TextBlock Text="   "></TextBlock>
                                 <CheckBox IsChecked="{Binding Path=rights.isVisible}" ToolTip="{Binding Path=visibleTooltipText}" Tag="{Binding Path=id}" 
                                           Checked="visibilityChangedHandler" 
                                           Unchecked="visibilityChangedHandler"></CheckBox>
-                                <TextBlock Text="::"></TextBlock>
-                                <CheckBox IsChecked="{Binding Path=rights.canCreate}" ToolTip="{Binding Path=createTooltipText}"></CheckBox>
-                                <CheckBox IsChecked="{Binding Path=rights.canRead}" ToolTip="{Binding Path=readTooltipText}"></CheckBox>
-                                <CheckBox IsChecked="{Binding Path=rights.canUpdate}" ToolTip="{Binding Path=updateTooltipText}"></CheckBox>
-                                <CheckBox IsChecked="{Binding Path=rights.canDelete}" ToolTip="{Binding Path=deleteTooltipText}"></CheckBox>
+                                <TextBlock Text="{Binding Path=text}" 
+                                           Foreground="{Binding Path=color}" 
+                                           FontFamily="{Binding Path=font}"
+                                           FontSize="{Binding Path=fontSize}"
+                                           FontWeight="{Binding Path=fontWeight}" />
+                                <TextBlock Text="   "></TextBlock>
+                                <CheckBox IsChecked="{Binding Path=rights.canCreate}" ToolTip="{Binding Path=createTooltipText}" Tag="{Binding Path=id}" 
+                                          Checked="visibilityChangedHandler" 
+                                          Unchecked="visibilityChangedHandler"
+                                          Visibility="{Binding Path=visibility}"></CheckBox>
+                                <CheckBox IsChecked="{Binding Path=rights.canRead}" ToolTip="{Binding Path=readTooltipText}" Tag="{Binding Path=id}" 
+                                          Checked="visibilityChangedHandler" 
+                                          Unchecked="visibilityChangedHandler"
+                                          Visibility="{Binding Path=visibility}"></CheckBox>
+                                <CheckBox IsChecked="{Binding Path=rights.canUpdate}" ToolTip="{Binding Path=updateTooltipText}" Tag="{Binding Path=id}" 
+                                          Checked="visibilityChangedHandler" 
+                                          Unchecked="visibilityChangedHandler"
+                                          Visibility="{Binding Path=visibility}"></CheckBox>
+                                <CheckBox IsChecked="{Binding Path=rights.canDelete}" ToolTip="{Binding Path=deleteTooltipText}" Tag="{Binding Path=id}" 
+                                          Checked="visibilityChangedHandler" 
+                                          Unchecked="visibilityChangedHandler"
+                                          Visibility="{Binding Path=visibility}"></CheckBox>
                             </StackPanel>
                         </HierarchicalDataTemplate>
                     </TreeView.ItemTemplate>
@@ -77,6 +92,10 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left">
+                        <Button Name="btnSaveTreeview" Width="200" Click="btnSaveTreeview_Click">Save rights</Button>
                     </StackPanel>
 
                     <!--<StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">

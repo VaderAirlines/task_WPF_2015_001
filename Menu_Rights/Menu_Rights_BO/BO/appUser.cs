@@ -16,12 +16,11 @@ namespace Menu_Rights_BO_DAO.BO {
         public userGroup group { get { return _group; } set { _group = value; } }
 
         public List<menuItem> getMenuItems() {
+			group.menuItems = group.menuItems.Where(item => item.rights.isVisible == true).ToList();
             group.menuItems.ForEach(item => item.subItems = group.menuItems.Where(child => child.parentID == item.id).ToList());
-            group.menuItems.ForEach(item => item.color = item.subItems.Count < 1 ? "Blue" : "Black");
             List<menuItem> topItems = group.menuItems.Where(item => item.parentID == 0).ToList();
-            topItems.ForEach(item => item.color = "Red");
 
-            return topItems.Where(item => item.rights.isVisible == true).ToList();
+            return topItems;
         }
 
         public menuItem getMenuItem(int _id) {

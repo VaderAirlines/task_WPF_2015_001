@@ -28,6 +28,18 @@ namespace Menu_Rights_BO_DAO.BO {
         public string readTooltipText { get { return "read"; } }
         public string updateTooltipText { get { return "update"; } }
         public string deleteTooltipText { get { return "delete"; } }
+
+		// overrides
+		public override string ToString() {
+			StringBuilder retval = new StringBuilder();
+			retval.Append(isVisible ? 1 : 0);
+			retval.Append(canCreate ? 1 : 0);
+			retval.Append(canRead ? 1 : 0);
+			retval.Append(canUpdate ? 1 : 0);
+			retval.Append(canDelete ? 1 : 0);
+
+			return retval.ToString();
+		}
     }
 
 
