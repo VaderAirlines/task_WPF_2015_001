@@ -17,37 +17,41 @@
                         <TreeView.ItemTemplate>
                             <HierarchicalDataTemplate ItemsSource="{Binding subItems}">
                                 <StackPanel Orientation="Horizontal">
-                                    <CheckBox IsChecked="{Binding Path=rights.isVisible}" ToolTip="{Binding Path=visibleTooltipText}" 
+                                    <CheckBox IsChecked="{Binding Path=rights.isVisible}" 
+                                          ToolTip="{Binding Path=visibleTooltipText}"
                                           Tag="{Binding Path=id}" 
-                                          Checked="visibilityChangedHandler" 
-                                          Unchecked="visibilityChangedHandler"
-                                          Name="chkVisible"></CheckBox>
+                                          Name="chkVisible" 
+                                          Click="checkboxClickHandler"></CheckBox>
                                     <TextBlock Text="{Binding Path=text}" 
                                            Foreground="{Binding Path=color}" 
                                            FontFamily="{Binding Path=font}"
                                            FontSize="{Binding Path=fontSize}"
                                            FontWeight="{Binding Path=fontWeight}" />
                                     <TextBlock Text="   "></TextBlock>
-                                    <CheckBox IsChecked="{Binding Path=rights.canCreate}" ToolTip="{Binding Path=createTooltipText}" Tag="{Binding Path=id}" 
-                                          Checked="visibilityChangedHandler" 
-                                          Unchecked="visibilityChangedHandler"
-                                          Visibility="{Binding Path=visibility}"
-                                          Name="chkCanCreate"></CheckBox>
-                                    <CheckBox IsChecked="{Binding Path=rights.canRead}" ToolTip="{Binding Path=readTooltipText}" Tag="{Binding Path=id}" 
-                                          Checked="visibilityChangedHandler" 
-                                          Unchecked="visibilityChangedHandler"
-                                          Visibility="{Binding Path=visibility}"
-                                          Name="chkCanRead"></CheckBox>
-                                    <CheckBox IsChecked="{Binding Path=rights.canUpdate}" ToolTip="{Binding Path=updateTooltipText}" Tag="{Binding Path=id}" 
-                                          Checked="visibilityChangedHandler" 
-                                          Unchecked="visibilityChangedHandler"
-                                          Visibility="{Binding Path=visibility}"
-                                          Name="chkCanUpdate"></CheckBox>
-                                    <CheckBox IsChecked="{Binding Path=rights.canDelete}" ToolTip="{Binding Path=deleteTooltipText}" Tag="{Binding Path=id}" 
-                                          Checked="visibilityChangedHandler" 
-                                          Unchecked="visibilityChangedHandler"
-                                          Visibility="{Binding Path=visibility}"
-                                          Name="chkCanDelete"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canCreate}" 
+                                              ToolTip="{Binding Path=createTooltipText}" 
+                                              Tag="{Binding Path=id}" 
+                                              Visibility="{Binding Path=visibility}"
+                                              Name="chkCanCreate"
+                                              Click="checkboxClickHandler"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canRead}" 
+                                              ToolTip="{Binding Path=readTooltipText}" 
+                                              Tag="{Binding Path=id}" 
+                                              Visibility="{Binding Path=visibility}"
+                                              Name="chkCanRead"
+                                              Click="checkboxClickHandler"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canUpdate}" 
+                                              ToolTip="{Binding Path=updateTooltipText}" 
+                                              Tag="{Binding Path=id}" 
+                                              Visibility="{Binding Path=visibility}"
+                                              Name="chkCanUpdate"
+                                              Click="checkboxClickHandler"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canDelete}" 
+                                              ToolTip="{Binding Path=deleteTooltipText}" 
+                                              Tag="{Binding Path=id}" 
+                                              Visibility="{Binding Path=visibility}"
+                                              Name="chkCanDelete"
+                                              Click="checkboxClickHandler"></CheckBox>
                                 </StackPanel>
                             </HierarchicalDataTemplate>
                         </TreeView.ItemTemplate>

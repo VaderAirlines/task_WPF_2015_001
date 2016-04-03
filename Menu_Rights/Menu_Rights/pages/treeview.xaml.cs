@@ -55,17 +55,41 @@ namespace Menu_Rights.pages {
 			itemsThatWereAdapted.Clear();
 		}
 
-		private void visibilityChangedHandler(object sender, RoutedEventArgs e) {
+		private void checkboxClickHandler(object sender, RoutedEventArgs e) {
+			int menuItemID;
 			CheckBox checkbox = (CheckBox) sender;
-			menuItem checkedItem = getMenuItemWithID(currentTreeviewItems, (int) checkbox.Tag);
-			menuItem originalItem = getMenuItemWithID(originalItems, (int) checkbox.Tag);
+			bool comesFromSubItem = false;
 
+			// check caller
+			try {
+				menuItemID = Convert.ToInt32(e.Source.ToString());
+				comesFromSubItem = true;
+			} catch {
+				menuItemID = (int) checkbox.Tag;
+			}
+
+			// get items to compare
+			menuItem checkedItem = getMenuItemWithID(currentTreeviewItems, menuItemID);
+			menuItem originalItem = getMenuItemWithID(originalItems, menuItemID);
+
+			// add or remove from altered items list
 			handleItemChanges(checkedItem, originalItem);
 
-			if (checkbox.Name.Equals("chkVisible")) {
-				actOnMenuItems(checkedItem.subItems,
-					checkedItem.rights.isVisible ? treeviewItemAction.Select : treeviewItemAction.Deselect);
-			};
+			if (!comesFromSubItem) {
+				if (checkbox.Name.Equals("chkVisible")) {
+					// handle subitem visibility
+					handleSubItems(checkedItem.subItems,
+						checkedItem.rights.isVisible ? treeviewItemAction.Select : treeviewItemAction.Deselect);
+
+					// handle parent visibility if checked
+					if ((bool) checkbox.IsChecked) {
+						handleParents(checkedItem, checkbox, e);
+					};
+				};
+			} else {
+				handleParents(checkedItem, checkbox, e);
+			}
+
 
 			// treeview refreshen lukt NIET	!!!
 			//trvTreeview.Dispatcher.Invoke(new Action(delegate() {
@@ -104,11 +128,11 @@ namespace Menu_Rights.pages {
 		}
 
 		private void btnSelectAll_Click(object sender, RoutedEventArgs e) {
-			actOnMenuItems((trvTreeview.DataContext as List<menuItem>), treeviewItemAction.Select);
+			handleSubItems((trvTreeview.DataContext as List<menuItem>), treeviewItemAction.Select);
 		}
 
 		private void btnDeselectAll_Click(object sender, RoutedEventArgs e) {
-			actOnMenuItems((trvTreeview.DataContext as List<menuItem>), treeviewItemAction.Deselect);
+			handleSubItems((trvTreeview.DataContext as List<menuItem>), treeviewItemAction.Deselect);
 		}
 
 		private void btnCopyRights_Click(object sender, RoutedEventArgs e) {
@@ -169,14 +193,25 @@ namespace Menu_Rights.pages {
 				itemsThatWereAdapted.Add(item);
 		}
 
-		private void actOnMenuItems(List<menuItem> items, treeviewItemAction action) {
+		private void handleParents(menuItem checkedItem, CheckBox checkbox, RoutedEventArgs e) {
+			if (checkedItem.parentID > 0) {
+				menuItem parent = getMenuItemWithID(currentTreeviewItems, checkedItem.parentID);
+				parent.rights.isVisible = true;
+				e.Source = checkedItem.parentID;
+				checkboxClickHandler(checkbox, e);
+			};
+		}
+
+		private void handleSubItems(List<menuItem> items, treeviewItemAction action) {
 			if (items == null) { return; };
 
 			bool setValue = action == treeviewItemAction.Select ? true : false;
+
+			// handle enabling/disabling of all child elements
 			foreach (menuItem item in items) {
 				item.rights.isVisible = setValue;
 				handleItemChanges(item, getMenuItemWithID(originalItems, item.id));
-				if (item.subItems.Count > 0) { actOnMenuItems(item.subItems, action); };
+				if (item.subItems.Count > 0) { handleSubItems(item.subItems, action); };
 			}
 		}
 
@@ -192,6 +227,7 @@ namespace Menu_Rights.pages {
 				if (copiedItem.subItems.Count > 0) { pasteRights(copiedItem.subItems); };
 			}
 		}
+
 
 		// private enums
 		private enum treeviewItemAction {
