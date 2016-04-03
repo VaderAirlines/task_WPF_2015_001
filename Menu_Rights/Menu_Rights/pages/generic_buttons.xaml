@@ -10,11 +10,14 @@
 
     <Grid>
         <StackPanel>
-            <Button Name="btnCreate" Width="100" Height="20" IsEnabled="{Binding Path=rights.canCreate}" Content="create"></Button>
-            <Button Name="btnRead" Width="100" Height="20" IsEnabled="{Binding Path=rights.canRead}" Content="read"></Button>
-            <Button Name="btnUpdate" Width="100" Height="20" IsEnabled="{Binding Path=rights.canUpdate}" Content="update"></Button>
-            <Button Name="btnDelete" Width="100" Height="20" IsEnabled="{Binding Path=rights.canDelete}" Content="delete"></Button>
-            <Button Name="btnClose" Width="100" Height="20" Click="closeWindow" Content="close"></Button>
+            <Button Name="btnNew" Width="100" Height="20" IsEnabled="{Binding Path=rights.canNew}" Content="{StaticResource new}"></Button>
+            <Button Name="btnSave" Width="100" Height="20" IsEnabled="{Binding Path=rights.canSave}" Content="{StaticResource save}"></Button>
+            <Button Name="btnDelete" Width="100" Height="20" IsEnabled="{Binding Path=rights.canDelete}" Content="{StaticResource delete}"></Button>
+            <Button Name="btnCancel" Width="100" Height="20" IsEnabled="{Binding Path=rights.canCancel}" Content="{StaticResource cancel}"></Button>
+            <Button Name="btnPrint" Width="100" Height="20" IsEnabled="{Binding Path=rights.canPrint}" Content="{StaticResource print}"></Button>
+            <Button Name="btnFind" Width="100" Height="20" IsEnabled="{Binding Path=rights.canFind}" Content="{StaticResource find}"></Button>
+            <Button Name="btnHelp" Width="100" Height="20" IsEnabled="{Binding Path=rights.canHelp}" Content="{StaticResource help}"></Button>
+            <Button Name="btnClose" Width="100" Height="20" IsEnabled="{Binding Path=rights.canClose}" Click="closeWindow" Content="close"></Button>
         </StackPanel>
     </Grid>
 </Page>

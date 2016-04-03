@@ -36,3 +36,7 @@ C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\M
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.csproj.GenerateResource.Cache
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.exe
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Menu_Rights.pdb
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Resources\CrossBox.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Resources\Shared.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\App.baml
+C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\obj\Debug\Resources\Copy.baml

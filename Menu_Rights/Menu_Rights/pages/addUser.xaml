@@ -35,6 +35,10 @@
         </StackPanel>
 
         <StackPanel Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="top">
+            <TextBlock>Emailaddress</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="top">
             <TextBlock>Usergroup</TextBlock>
         </StackPanel>
 
@@ -48,6 +52,10 @@
         </StackPanel>
 
         <StackPanel Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left">
+            <TextBox Name="txtEmail" Width="200" Text="{Binding Path=email}"></TextBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left">
             <ComboBox x:Name="cmbGroups" Grid.Column="2" BorderThickness="1" ItemsSource="{Binding}" Width="200">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -58,7 +66,7 @@
         </StackPanel>
 
         <!--SUBMIT BUTTON-->
-        <StackPanel Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left">
+        <StackPanel Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left">
             <Button Name="btnCreateUser" Click="createUser" Width="200">Create user</Button>
         </StackPanel>
 

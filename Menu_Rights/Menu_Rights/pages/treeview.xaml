@@ -10,7 +10,7 @@
 
     <Grid>
         <DockPanel LastChildFill="true">
-            <StackPanel Name="stpTreeview" DockPanel.Dock="Left" Width="300" Loaded="init">
+            <StackPanel Name="stpTreeview" DockPanel.Dock="Left" Width="400" Loaded="init">                    
                 <ScrollViewer Name="scrScroller">
                     <TreeView Name="trvTreeview"  ItemsSource="{Binding}"
                           BorderThickness="0" BorderBrush="Transparent" Padding="15">
@@ -18,40 +18,73 @@
                             <HierarchicalDataTemplate ItemsSource="{Binding subItems}">
                                 <StackPanel Orientation="Horizontal">
                                     <CheckBox IsChecked="{Binding Path=rights.isVisible}" 
-                                          ToolTip="{Binding Path=visibleTooltipText}"
+                                          ToolTip="{StaticResource isVisible}"
                                           Tag="{Binding Path=id}" 
                                           Name="chkVisible" 
-                                          Click="checkboxClickHandler"></CheckBox>
+                                          Click="checkboxClickHandler"                                           
+                                          Style="{DynamicResource ResourceKey=CrossBox}"></CheckBox>
                                     <TextBlock Text="{Binding Path=text}" 
                                            Foreground="{Binding Path=color}" 
                                            FontFamily="{Binding Path=font}"
                                            FontSize="{Binding Path=fontSize}"
                                            FontWeight="{Binding Path=fontWeight}" />
                                     <TextBlock Text="   "></TextBlock>
-                                    <CheckBox IsChecked="{Binding Path=rights.canCreate}" 
-                                              ToolTip="{Binding Path=createTooltipText}" 
+                                    <CheckBox IsChecked="{Binding Path=rights.canNew}" 
+                                              ToolTip="{StaticResource new}" 
                                               Tag="{Binding Path=id}" 
                                               Visibility="{Binding Path=visibility}"
-                                              Name="chkCanCreate"
-                                              Click="checkboxClickHandler"></CheckBox>
-                                    <CheckBox IsChecked="{Binding Path=rights.canRead}" 
-                                              ToolTip="{Binding Path=readTooltipText}" 
+                                              Name="chkCanNew"
+                                              Click="checkboxClickHandler"
+                                              Style="{DynamicResource ResourceKey=CrossBox}"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canSave}" 
+                                              ToolTip="{StaticResource save}" 
                                               Tag="{Binding Path=id}" 
                                               Visibility="{Binding Path=visibility}"
-                                              Name="chkCanRead"
-                                              Click="checkboxClickHandler"></CheckBox>
-                                    <CheckBox IsChecked="{Binding Path=rights.canUpdate}" 
-                                              ToolTip="{Binding Path=updateTooltipText}" 
-                                              Tag="{Binding Path=id}" 
-                                              Visibility="{Binding Path=visibility}"
-                                              Name="chkCanUpdate"
-                                              Click="checkboxClickHandler"></CheckBox>
+                                              Name="chkCanSave"
+                                              Click="checkboxClickHandler"
+                                              Style="{DynamicResource ResourceKey=CrossBox}"></CheckBox>
                                     <CheckBox IsChecked="{Binding Path=rights.canDelete}" 
-                                              ToolTip="{Binding Path=deleteTooltipText}" 
+                                              ToolTip="{StaticResource delete}" 
                                               Tag="{Binding Path=id}" 
                                               Visibility="{Binding Path=visibility}"
                                               Name="chkCanDelete"
-                                              Click="checkboxClickHandler"></CheckBox>
+                                              Click="checkboxClickHandler"
+                                              Style="{DynamicResource ResourceKey=CrossBox}"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canCancel}" 
+                                              ToolTip="{StaticResource cancel}" 
+                                              Tag="{Binding Path=id}" 
+                                              Visibility="{Binding Path=visibility}"
+                                              Name="chkCanCancel"
+                                              Click="checkboxClickHandler"
+                                              Style="{DynamicResource ResourceKey=CrossBox}"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canPrint}" 
+                                              ToolTip="{StaticResource print}" 
+                                              Tag="{Binding Path=id}" 
+                                              Visibility="{Binding Path=visibility}"
+                                              Name="chkCanPrint"
+                                              Click="checkboxClickHandler"
+                                              Style="{DynamicResource ResourceKey=CrossBox}"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canFind}" 
+                                              ToolTip="{StaticResource find}" 
+                                              Tag="{Binding Path=id}" 
+                                              Visibility="{Binding Path=visibility}"
+                                              Name="chkCanFind"
+                                              Click="checkboxClickHandler"
+                                              Style="{DynamicResource ResourceKey=CrossBox}"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canHelp}" 
+                                              ToolTip="{StaticResource help}" 
+                                              Tag="{Binding Path=id}" 
+                                              Visibility="{Binding Path=visibility}"
+                                              Name="chkCanHelp"
+                                              Click="checkboxClickHandler"
+                                              Style="{DynamicResource ResourceKey=CrossBox}"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canClose}" 
+                                              ToolTip="{StaticResource close}" 
+                                              Tag="{Binding Path=id}" 
+                                              Visibility="{Binding Path=visibility}"
+                                              Name="chkCanClose"
+                                              Click="checkboxClickHandler"
+                                              Style="{DynamicResource ResourceKey=CrossBox}"></CheckBox>
                                 </StackPanel>
                             </HierarchicalDataTemplate>
                         </TreeView.ItemTemplate>

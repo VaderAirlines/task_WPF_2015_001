@@ -219,10 +219,16 @@ namespace Menu_Rights.pages {
 			foreach (menuItem copiedItem in copiedRights) {
 				menuItem targetItem = getMenuItemWithID(currentTreeviewItems, copiedItem.id);
 				targetItem.rights.isVisible = copiedItem.rights.isVisible;
-				targetItem.rights.canCreate = copiedItem.rights.canCreate;
+				targetItem.rights.canNew = copiedItem.rights.canNew;
+				targetItem.rights.canSave = copiedItem.rights.canSave;
 				targetItem.rights.canDelete = copiedItem.rights.canDelete;
-				targetItem.rights.canRead = copiedItem.rights.canRead;
-				targetItem.rights.canUpdate = copiedItem.rights.canUpdate;
+				targetItem.rights.canCancel = copiedItem.rights.canCancel;
+				targetItem.rights.canPrint = copiedItem.rights.canPrint;
+				targetItem.rights.canFind = copiedItem.rights.canFind;
+				targetItem.rights.canHelp = copiedItem.rights.canHelp;
+				targetItem.rights.canClose = copiedItem.rights.canClose;
+
+				handleItemChanges(targetItem, getMenuItemWithID(originalItems, copiedItem.id));
 
 				if (copiedItem.subItems.Count > 0) { pasteRights(copiedItem.subItems); };
 			}

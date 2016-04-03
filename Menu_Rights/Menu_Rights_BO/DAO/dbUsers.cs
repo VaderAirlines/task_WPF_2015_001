@@ -28,6 +28,7 @@ namespace Menu_Rights_BO_DAO.DAO {
                             user = new appUser();
                             user.id = Convert.ToInt32(reader["id"]);
                             user.login = login;
+							user.email = reader["emailAddress"].ToString();
                             user.group = dbUserGroups.getUserGroup(Convert.ToInt32(reader["groupID"]));
                         }
                     };
@@ -37,12 +38,13 @@ namespace Menu_Rights_BO_DAO.DAO {
             return user;
         }
 
-        public static void createUser(string login,string password,int groupID) {
+        public static void createUser(string login, string password, string email, int groupID) {
             using(SqlConnection con = connectionManager.getConnection()) {
                 SqlCommand com = new SqlCommand("createUser",con);
                 com.CommandType = System.Data.CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@login",login);
                 com.Parameters.AddWithValue("@password",password);
+                com.Parameters.AddWithValue("@email",password);
                 com.Parameters.AddWithValue("@groupID",groupID);
 
                 try {

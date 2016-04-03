@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\school\Graduaat Informatica\000 - Github repo\task_WPF_2015_001\Menu_Rights\Menu_Rights\App.xaml
-10-248285312
+131431882491
 
 22-2026610033
 12-1133690230
-MainWindow.xaml;pages\addGroup.xaml;pages\addUser.xaml;pages\addMenuItem.xaml;pages\error.xaml;pages\empty.xaml;pages\generic_buttons.xaml;pages\login.xaml;pages\treeview.xaml;pages\welcome.xaml;
+MainWindow.xaml;pages\addGroup.xaml;pages\addUser.xaml;pages\addMenuItem.xaml;pages\error.xaml;pages\empty.xaml;pages\generic_buttons.xaml;pages\login.xaml;pages\treeview.xaml;pages\welcome.xaml;Resources\Copy.xaml;Resources\CrossBox.xaml;Resources\Shared.xaml;
 
 False
 

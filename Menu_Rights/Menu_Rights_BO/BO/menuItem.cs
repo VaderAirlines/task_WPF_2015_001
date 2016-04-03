@@ -16,7 +16,7 @@ namespace Menu_Rights_BO_DAO.BO {
 		string _pageName;
 		string _color;
 
-		menuItemRights _rights = new menuItemRights("00000");
+		menuItemRights _rights = new menuItemRights("111010111");
 		List<menuItem> _subItems;
 
 		// .ctors
@@ -68,11 +68,7 @@ namespace Menu_Rights_BO_DAO.BO {
 			if (other.rights == null)
 				return base.Equals(obj);
 
-			if (other.rights.isVisible == this.rights.isVisible &&
-				other.rights.canCreate == this.rights.canCreate &&
-				other.rights.canDelete == this.rights.canDelete &&
-				other.rights.canRead == this.rights.canRead &&
-				other.rights.canUpdate == this.rights.canUpdate)
+			if (other.id + other.rights.ToString() == this.id + this.rights.ToString())
 				return true;
 
 			return false;
