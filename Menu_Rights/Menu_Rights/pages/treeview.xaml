@@ -6,46 +6,55 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="treeview"
-      ShowsNavigationUI="False">
+      ShowsNavigationUI="False" SizeChanged="Page_SizeChanged">
 
     <Grid>
         <DockPanel LastChildFill="true">
             <StackPanel Name="stpTreeview" DockPanel.Dock="Left" Width="300" Loaded="init">
-                <TreeView Name="trvTreeview" BorderThickness="0" BorderBrush="Transparent" Padding="15">
-                    <TreeView.ItemTemplate>
-                        <HierarchicalDataTemplate ItemsSource="{Binding subItems}">
-                            <StackPanel Orientation="Horizontal">
-                                <CheckBox IsChecked="{Binding Path=rights.isVisible}" ToolTip="{Binding Path=visibleTooltipText}" Tag="{Binding Path=id}" 
+                <ScrollViewer Name="scrScroller">
+                    <TreeView Name="trvTreeview"  ItemsSource="{Binding}"
+                          BorderThickness="0" BorderBrush="Transparent" Padding="15">
+                        <TreeView.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding subItems}">
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox IsChecked="{Binding Path=rights.isVisible}" ToolTip="{Binding Path=visibleTooltipText}" 
+                                          Tag="{Binding Path=id}" 
                                           Checked="visibilityChangedHandler" 
-                                          Unchecked="visibilityChangedHandler"></CheckBox>
-                                <TextBlock Text="{Binding Path=text}" 
+                                          Unchecked="visibilityChangedHandler"
+                                          Name="chkVisible"></CheckBox>
+                                    <TextBlock Text="{Binding Path=text}" 
                                            Foreground="{Binding Path=color}" 
                                            FontFamily="{Binding Path=font}"
                                            FontSize="{Binding Path=fontSize}"
                                            FontWeight="{Binding Path=fontWeight}" />
-                                <TextBlock Text="   "></TextBlock>
-                                <CheckBox IsChecked="{Binding Path=rights.canCreate}" ToolTip="{Binding Path=createTooltipText}" Tag="{Binding Path=id}" 
+                                    <TextBlock Text="   "></TextBlock>
+                                    <CheckBox IsChecked="{Binding Path=rights.canCreate}" ToolTip="{Binding Path=createTooltipText}" Tag="{Binding Path=id}" 
                                           Checked="visibilityChangedHandler" 
                                           Unchecked="visibilityChangedHandler"
-                                          Visibility="{Binding Path=visibility}"></CheckBox>
-                                <CheckBox IsChecked="{Binding Path=rights.canRead}" ToolTip="{Binding Path=readTooltipText}" Tag="{Binding Path=id}" 
+                                          Visibility="{Binding Path=visibility}"
+                                          Name="chkCanCreate"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canRead}" ToolTip="{Binding Path=readTooltipText}" Tag="{Binding Path=id}" 
                                           Checked="visibilityChangedHandler" 
                                           Unchecked="visibilityChangedHandler"
-                                          Visibility="{Binding Path=visibility}"></CheckBox>
-                                <CheckBox IsChecked="{Binding Path=rights.canUpdate}" ToolTip="{Binding Path=updateTooltipText}" Tag="{Binding Path=id}" 
+                                          Visibility="{Binding Path=visibility}"
+                                          Name="chkCanRead"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canUpdate}" ToolTip="{Binding Path=updateTooltipText}" Tag="{Binding Path=id}" 
                                           Checked="visibilityChangedHandler" 
                                           Unchecked="visibilityChangedHandler"
-                                          Visibility="{Binding Path=visibility}"></CheckBox>
-                                <CheckBox IsChecked="{Binding Path=rights.canDelete}" ToolTip="{Binding Path=deleteTooltipText}" Tag="{Binding Path=id}" 
+                                          Visibility="{Binding Path=visibility}"
+                                          Name="chkCanUpdate"></CheckBox>
+                                    <CheckBox IsChecked="{Binding Path=rights.canDelete}" ToolTip="{Binding Path=deleteTooltipText}" Tag="{Binding Path=id}" 
                                           Checked="visibilityChangedHandler" 
                                           Unchecked="visibilityChangedHandler"
-                                          Visibility="{Binding Path=visibility}"></CheckBox>
-                            </StackPanel>
-                        </HierarchicalDataTemplate>
-                    </TreeView.ItemTemplate>
-                </TreeView>
+                                          Visibility="{Binding Path=visibility}"
+                                          Name="chkCanDelete"></CheckBox>
+                                </StackPanel>
+                            </HierarchicalDataTemplate>
+                        </TreeView.ItemTemplate>
+                    </TreeView>
+                </ScrollViewer>
             </StackPanel>
-            
+
             <StackPanel>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -61,6 +70,9 @@
                         <RowDefinition Height="30"></RowDefinition>
                         <RowDefinition Height="30"></RowDefinition>
                         <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
 
@@ -69,17 +81,9 @@
                         <TextBlock>Select usergroup</TextBlock>
                     </StackPanel>
 
-                    <!--<StackPanel Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="top">
-                        <TextBlock>Parent</TextBlock>
-                    </StackPanel>
-
-                    <StackPanel Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="top">
-                        <TextBlock>Order in parent</TextBlock>
-                    </StackPanel>
-
                     <StackPanel Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="top">
-                        <TextBlock>Page to link to</TextBlock>
-                    </StackPanel>-->
+                        <TextBlock>Helpers</TextBlock>
+                    </StackPanel>
 
                     <!--INPUTS-->
                     <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
@@ -94,37 +98,30 @@
                         </ComboBox>
                     </StackPanel>
 
-                    <StackPanel Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left">
+                    <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
                         <Button Name="btnSaveTreeview" Width="200" Click="btnSaveTreeview_Click">Save rights</Button>
                     </StackPanel>
 
-                    <!--<StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
-                        <ComboBox x:Name="cmbParents" Grid.Column="2" BorderThickness="1" ItemsSource="{Binding}" Width="200">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=textAndID}"/>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
-                    </StackPanel>
-
-                    <StackPanel Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" Loaded="init">
-                        <TextBox Name="txtOrderInParent" Width="200" Text="{Binding Path=orderNrInParent}"></TextBox>
-                    </StackPanel>
-
                     <StackPanel Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left">
-                        <TextBox Name="txtPageName" Width="200" Text="{Binding Path=pageName}"></TextBox>
+                        <Button Name="btnSelectAll" Width="200" Click="btnSelectAll_Click">Select all</Button>
                     </StackPanel>
 
-                    <! SUBMIT BUTTON  >
+                    <StackPanel Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left">
+                        <Button Name="btnDeselectAll" Width="200" Click="btnDeselectAll_Click">Deselect all</Button>
+                    </StackPanel>
+
                     <StackPanel Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left">
-                        <Button Name="btnCreateMenuItem" Click="createMenuItem" Width="200">Create menu item</Button>
-                    </StackPanel>-->
+                        <Button Name="btnCopyRights" Width="200" Click="btnCopyRights_Click">Copy rights</Button>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Grid.Row="7" HorizontalAlignment="Left">
+                        <Button Name="btnPasteRights" Width="200" Click="btnPasteRights_Click">Paste rights</Button>
+                    </StackPanel>
 
                 </Grid>
-                
+
             </StackPanel>
-            
+
         </DockPanel>
     </Grid>
 </Page>

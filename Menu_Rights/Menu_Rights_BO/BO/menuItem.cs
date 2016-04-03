@@ -16,8 +16,18 @@ namespace Menu_Rights_BO_DAO.BO {
 		string _pageName;
 		string _color;
 
-		menuItemRights _rights;
+		menuItemRights _rights = new menuItemRights("00000");
 		List<menuItem> _subItems;
+
+		// .ctors
+		public menuItem() {
+		}
+
+		//private void handleRightsChange(bool value) {
+		//	foreach (menuItem item in this.subItems) {
+		//		item.rights.isVisible = value;
+		//	}
+		//}
 
 		// PROPERTIES
 		public int id { get { return _id; } set { _id = value; } }
@@ -34,10 +44,16 @@ namespace Menu_Rights_BO_DAO.BO {
 
 		public string visibility { get; set; }
 
-		public menuItemRights rights { get { return _rights; } set { _rights = value; } }
+		public menuItemRights rights {
+			get { return _rights; }
+			set {
+				_rights = value;
+				//_rights.RightsChanged += new menuItemRights.VisibilityRightsChangedEventHandler(handleRightsChange);
+			}
+		}
+
 		public List<menuItem> subItems { get { return _subItems; } set { _subItems = value; } }
 
-		// EXTRA PROPERTIES FOR COMBOBOXES ETC.
 		public string textAndID { get { return _text + " (" + _id + ")"; } }
 
 		// OVERRIDES
@@ -60,8 +76,6 @@ namespace Menu_Rights_BO_DAO.BO {
 				return true;
 
 			return false;
-
-			//return base.Equals(obj);
 		}
 
 		// override object.GetHashCode
@@ -70,5 +84,6 @@ namespace Menu_Rights_BO_DAO.BO {
 			// throw new NotImplementedException();
 			return base.GetHashCode();
 		}
+
 	}
 }
