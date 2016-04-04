@@ -38,6 +38,34 @@ namespace Menu_Rights_BO_DAO.DAO {
             return user;
         }
 
+		public static List<appUser> getAllUsersForGroup(int groupID) {
+			List<appUser> users = new List<appUser>();
+
+			using (SqlConnection con = connectionManager.getConnection()) {
+				SqlCommand com = new SqlCommand("getAllUsersForGroup", con);
+				com.CommandType = System.Data.CommandType.StoredProcedure;
+				com.Parameters.AddWithValue("@groupID", groupID);
+
+				try {
+					con.Open();
+
+					SqlDataReader reader = com.ExecuteReader();
+					if (reader.HasRows) {
+						while (reader.Read()) {
+							appUser user = new appUser();
+							user.id = Convert.ToInt32(reader["id"]);
+							user.login = reader["login"].ToString();
+							user.email = reader["emailAddress"].ToString();
+
+							users.Add(user);
+						}
+					};
+				} catch { throw; };
+			}
+
+			return users;
+		}
+
         public static void createUser(string login, string password, string email, int groupID) {
             using(SqlConnection con = connectionManager.getConnection()) {
                 SqlCommand com = new SqlCommand("createUser",con);
