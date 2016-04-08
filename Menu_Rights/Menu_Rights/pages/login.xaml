@@ -35,11 +35,13 @@
 
         <!--INPUTS-->
         <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left">
-            <TextBox Name="txtLogin" Width="200" Text="login"></TextBox>
+            <!--<TextBox Name="txtLogin" Width="200" Text="login"></TextBox>-->
+            <TextBox Name="txtLogin" Width="200" Text=""></TextBox>
         </StackPanel>
 
         <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left">
-            <TextBox Name="txtPassword" Width="200" Text="paswoord"></TextBox>
+            <!--<TextBox Name="txtPassword" Width="200" Text="paswoord"></TextBox>-->
+            <TextBox Name="txtPassword" Width="200" Text=""></TextBox>
         </StackPanel>
 
         <!--SUBMIT BUTTON-->

@@ -270,7 +270,7 @@ namespace Menu_Rights.pages {
 		private string createMessage(List<menuItem> itemsThatWereAdapted, List<menuItem> originalItems) {
 			StringBuilder message = new StringBuilder();
 
-			message.AppendLine("Beste {login},");
+			message.AppendLine(String.Format("Beste {0},", (this.DataContext as menuRightsApplication).currentUser.login));
 			message.AppendLine();
 			message.AppendLine("uw rechten in ons systeem zijn aangepast. Hieronder een overzicht:");
 			message.AppendLine();
